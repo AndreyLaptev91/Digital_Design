@@ -65,5 +65,40 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
   createlibraryList(libraries.library, libraryList);
+
+  var b = document.body || document.getElementsByTagName("body")[0];
+  b.insertAdjacentHTML(
+    "beforeend",
+    '<button on click="topFunction()" id="toTop" title="Go to top">Вверх</button>'
+  );
+  document
+    .getElementById("toTop")
+    .setAttribute(
+      "style",
+      "display: none; position: fixed; bottom: 18px; right: 18px; z-index: 1000; border: none; outline: none; background: none; cursor: pointer;"
+    );
+
+  document.documentElement.setAttribute("style", "scroll-behavior: smooth;");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    let t = document.getElementById("toTop");
+    if (
+      document.body.scrollTop > 10 ||
+      document.documentElement.scrollTop > 10
+    ) {
+      t.style.display = "block";
+    } else {
+      t.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.documentElement.scrollTop = 0;
+  }
 });
