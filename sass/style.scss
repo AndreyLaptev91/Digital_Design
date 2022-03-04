@@ -14,7 +14,7 @@
     align-items: center;
     height: 100%;
     width: 300px;
-    background: #ffd500;
+    background: #1ca1ee;
     form {
       position: relative;
       width: 260px;
@@ -32,16 +32,6 @@
         &::placeholder {
           color: #fff;
         }
-      }
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 2px;
-        right: 10px;
-        background: url("../icons/search.svg") center (center / cover) no-repeat;
-        width: 24px;
-        height: 24px;
       }
     }
   }
@@ -71,11 +61,11 @@
       padding-left: 40px;
       margin-top: 18px;
       &:hover {
-        color: #ffd500;
+        color: #1ca1ee;
       }
       &_active {
-        border-left: 2px solid #ffd500;
-        color: #ffd500;
+        border-left: 2px solid #1ca1ee;
+        color: #1ca1ee;
       }
     }
   }
@@ -84,31 +74,9 @@
   }
   &__bg {
     height: 360px;
-    background: url("../img/mars.webp") center (center / cover) no-repeat;
+    background: url("../img/biblioteki.webp") center (center / cover) no-repeat;
     background-position: top;
     padding: 107px 0 0 61px;
-  }
-  &__genre {
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 21px;
-    color: hsl(0, 0%, 100%);
-    text-transform: uppercase;
-  }
-  &__title {
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 56px;
-    color: #ffffff;
-    text-transform: uppercase;
-  }
-  &__descr {
-    width: 481px;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 21px;
-    color: #ffffff;
-    text-transform: uppercase;
   }
   &__interactive {
     display: flex;
@@ -164,7 +132,7 @@
         display: block;
         width: calc(100% - 40px);
         height: 2px;
-        background-color: #ffd500;
+        background-color: #1ca1ee;
       }
       &:hover {
         .delete {
@@ -203,7 +171,7 @@
         height: 45px;
         line-height: 50px;
         font-size: 16px;
-        background: rgba(196, 196, 196, 0.29);
+        background: rgba(102, 167, 241, 0.993);
         border: 1px solid rgba(0, 0, 0, 0.19);
         padding: 0 15px;
         outline: none;
@@ -241,13 +209,9 @@
       font-weight: bold;
       font-size: 18px;
       line-height: 21px;
-      color: #ffd500;
+      color: #1ca1ee;
       margin: 20px 0;
       text-align: center;
-    }
-    img {
-      width: 100%;
-      margin-bottom: 10px;
     }
   }
 }

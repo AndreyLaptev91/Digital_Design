@@ -98,6 +98,19 @@
   padding-left: 40px;
   margin-top: 18px;
 }
+.promo__menu-item_up {
+  display: block;
+  font-size: 28px;
+  line-height: 33px;
+  color: #d6d9dc;
+  text-decoration: none;
+  font-weight: 300;
+  padding-left: 40px;
+  margin-top: 900px;
+}
+.promo__menu-item_up:hover {
+  color: #1ca1ee;
+}
 .promo__menu-item:hover {
   color: #1ca1ee;
 }
@@ -113,38 +126,6 @@
   background: url("../img/biblioteki.webp") center center/cover no-repeat;
   background-position: top;
   padding: 107px 0 0 61px;
-}
-.promo__genre {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 21px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-.promo__title {
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 56px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-.promo__descr {
-  width: 481px;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 21px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-.promo__ratings {
-  margin-top: 13px;
-}
-.promo__ratings span {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 21px;
-  color: #1ca1ee;
-  margin-right: 25px;
 }
 .promo__interactive {
   display: -webkit-box;
@@ -247,7 +228,7 @@
   height: 45px;
   line-height: 50px;
   font-size: 16px;
-  background: rgba(196, 196, 196, 0.29);
+  background: rgba(33, 185, 255, 0.29);
   border: 1px solid rgba(0, 0, 0, 0.19);
   padding: 0 15px;
   outline: none;
