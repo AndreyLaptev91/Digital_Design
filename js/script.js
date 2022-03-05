@@ -1,6 +1,6 @@
 "use strict";
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const libraries = {
     library: [
       "React JS",
@@ -14,14 +14,16 @@ window.addEventListener("DOMContentLoaded", () => {
       "Webix",
       "DHX",
       "RedUL",
-      "Smart client Ajax RIA system",
     ],
   };
 
   const libraryList = document.querySelector(".promo__interactive-list"),
     addForm = document.querySelector("form.add"),
     addInput = addForm.querySelector(".adding__input"),
-    checkbox = addForm.querySelector('[type="checkbox"]');
+    checkbox = addForm.querySelector('[type="checkbox"]'),
+    modalTrigger = document.querySelector("[data-modal]"),
+    modal = document.querySelector(".modal"),
+    modalCloseBtn = document.querySelector("[data-close]");
 
   addForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -34,7 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
         newlibrary = `${newlibrary.substring(0, 10)}...`;
       }
       if (favorite) {
-        alert("Добавляем углубленное изучение");
+        console.log("Добавляем углубленное изучение");
       }
 
       libraries.library.push(newlibrary);
@@ -43,17 +45,22 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     event.target.reset();
   });
+  const deleteAdv = (arr) => {
+    arr.forEach((item) => {
+      item.remove();
+    });
+  };
 
   const sortArr = (arr) => {
     arr.sort();
   };
 
-  function createlibraryList(libraries, parent) {
+  function createlibraryList(ls, parent) {
     parent.innerHTML = "";
-    sortArr(libraries);
-    libraries.forEach((library, i) => {
+    sortArr(ls);
+    ls.forEach((l, i) => {
       parent.innerHTML += `
-        <li class="promo__interactive-item">${i + 1} ${library}
+        <li class="promo__interactive-item">${i + 1} ${l}
              <div class="delete"></div>
         </li>
         `;
@@ -62,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", () => {
         btn.parentElement.remove();
         libraries.library.splice(i, 1);
-        createlibraryList(libraries, parent);
+        createlibraryList(ls, parent);
       });
     });
   }
@@ -73,4 +80,13 @@ window.addEventListener("DOMContentLoaded", () => {
   function scrollToTop() {
     elmnt.scrollIntoView(true);
   }
+
+  modalTrigger.addEventListener("click", () => {
+    modal.classList.toggle("show");
+    document.body.style.overflow = "hidden";
+  });
+  modalCloseBtn.addEventListener("click", () => {
+    modal.classList.toggle("show");
+    document.body.style.overflow = "";
+  });
 });
